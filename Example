@@ -1,0 +1,972 @@
+<html>
+<!---GENERAL ---->
+
+
+<!-- Responsive: do not edit this AT ALL  -->
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"/>
+<!-- Heebo -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@200&display=swap" rel="stylesheet">
+
+<!-- Open Sans -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@200&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+
+
+<!-- CSS  -->
+	<style>
+
+
+
+	/* CLEAR DEFAULT SETTINGS **************************************************/
+	#sideMenu, #top_title, .patrollink, #firstHeading,  #home_logo, #sideMenu { display:none; }
+	#content { padding:0px; width:100%; margin-top:-7px; margin-left:0px; border:none;}
+	body, html {background-color:white; width: 100%; height: 100%;}
+	#bodyContent h1, #bodyContent h2, #bodyContent h3, #bodyContent h4, #bodyContent h5 { margin-bottom: 0px; }
+
+	#bodyContent a[href ^="https://"], .link-https { padding-right:0px;}
+
+
+  * {
+  	margin: 0;
+  	padding: 0;
+  	user-select: none;
+  	box-sizing: border-box;
+  	font-family: 'Nunito', sans-serif;
+	
+  }
+
+  /*this is the class that determines how the top of the menubar will look*/
+  nav {
+  	background: #13293D;
+  }
+
+  /*this is what formats everything after the nav class; it is important that the display remains as table. This allows the menubar items to be arranged properly. */
+  nav:after{
+  	content: '';
+  	clear: both;
+  	display: table;
+  	width:100%;
+  }
+
+  nav .logo {
+  	float: left;
+  	color: white;
+  	font-size: 16px;
+  	font-weight: lighter;
+  	line-height: 70px;
+  	padding-left: 20px;
+  	font-family: 'Heebo', sans-serif;
+  	letter-spacing: 2px;
+  }
+
+  nav .logo img {
+  	position: absolute;
+  	padding-left: 15px;
+	padding-top: 20px;
+  }
+
+  nav .logo a {
+  	text-transform:none;
+  	color:white;
+  	font-weight:lighter;
+  }
+
+  nav ul {
+  	float: right;
+  	margin-right: 40px;
+  	list-style: none;
+  	position: relative;
+  	color:white;
+  }
+
+  nav ul li {
+  	float: left;
+  	display: inline-block;
+  	background: #13293D;
+  	margin: 0 5px;
+  	color:white;
+  }
+
+  /*this styles the text as they are all links.*/
+  nav ul li a {
+  	 color: white;
+  	 line-height: 70px;
+  	 text-decoration: none;
+  	 font-size: 15px;
+  	 	padding-top: 8px;
+      padding-right: 15px;
+      padding-bottom: 8px;
+      padding-left: 15px;
+  	 font-family: 'Nunito', sans-serif;
+  	 font-weight:lighter;
+  	 letter-spacing: 1px;
+   }
+
+
+  nav ul li a:visited {
+  	color:white;
+  }
+
+  /*need to determine the colours of the shadow that we want to have around the menu items when we hover over it. */
+   nav ul li a:hover{
+  	 color: white;
+  	 text-transform:none;
+  	 border-radius: 5px;
+  	 box-shadow:  0 0 5px #c4e3fd, 0 0 10px #d7ecfe;
+  	 text-decoration: none;
+  	 padding: 8px 15px 8px 15px;
+   }
+
+  /*this is for formatting when you hover over the second dropdown layer.*/
+  nav ul ul li a:hover{
+  	box-shadow: none;
+  	text-decoration: none;
+  	}
+
+  /*change up this color so that it looks nice*/
+  nav ul ul li:hover {
+  	background-color:#4895EF;
+  }
+
+  /*need to fix the distance from the top here; this will ensure that it drops down in the appropiate position.*/
+  nav ul ul {
+  	position: absolute;
+  	top: 60px;
+  	border-top: none;
+  	opacity: 0;
+  	visibility: hidden;
+  	transition: top .2s;
+  	border-radius: 15px;
+  }
+
+  nav ul ul ul{
+  	border-top: none;
+  }
+
+  nav ul li:hover > ul{
+  	top: 66px;
+  	opacity: 1;
+  	visibility: visible;
+  }
+
+
+   nav ul ul li{
+  	 position: relative;
+  	 margin: 0px;
+  	 width: 180px;
+  	 float: none;
+  	 display: list-item;
+  	 background-color: #C4E3FD;
+  	 line-height: 50px;
+   }
+
+   nav ul ul li a {
+  	 line-height: 10px;
+  	 font-size: 13px;
+  	 text-decoration: none;
+   }
+
+
+   nav ul ul ul li {
+  	 position: relative;
+  	 top: -70px;
+  	 left: 159px;
+  	 background-color:#C4E3FD;
+  	 line-height: 50px;
+   }
+
+  /*this is the text inside the open up dropdown menubar; need to format this text properly. need to format the way in which lists are arranged.*/
+   nav ul ul ul li a {
+  	 line-height: 25px;
+  	 text-align: justify;
+  	 text-decoration: none;
+  	 margin-left:none;
+   }
+
+
+   nav ul ul ul li:hover {
+  	 background-color:#4895EF;
+   }
+
+
+   .show,.icon,input{
+  	 display: none;
+   }
+
+
+   .fa-plus{
+  	 font-size: 12px;
+  	 margin-left: 30px;
+  	 font-weight:lighter;
+  	 font-family: 'Nunito', sans-serif;
+  	 content:'';
+   }
+
+
+  /*this is used to set up the screen size*/
+
+  @media all and (max-width: 968px) {
+  			   nav ul{
+  			     margin-right: 0px;
+  			     float: left;
+  			   }
+  			   nav .logo{
+  			     padding-left: 30px;
+  			     width: 100%;
+  			   }
+
+  			   .show + a, ul{
+  			     display: none;
+  			   }
+  			   nav ul li,nav ul ul li{
+  			     display: block;
+  			     width: 100%;
+  			   }
+  			   nav ul li a:hover{
+  			     box-shadow: none;
+  			   }
+  			   .show {
+  			     display: block;
+  			     color: white;
+  			     font-size: 18px;
+  			     padding: 0 20px;
+  			     line-height: 70px;
+  			     cursor: pointer;
+  			   }
+
+  			   .show:hover{
+  			     color: #cc99ff;
+  			   }
+  			   .icon {
+  			     display: block;
+  			     color: white;
+  			     position: absolute;
+  			     top: 0;
+  			     right: 40px;
+  			     line-height: 70px;
+  			     cursor: pointer;
+  			     font-size: 25px;
+  			   }
+  			   nav ul ul{
+  			     top: 70px;
+  			     border-top: 0px;
+  			     float: none;
+  			     position: static;
+  			     display: none;
+  			     opacity: 1;
+  			     visibility: visible;
+  			   }
+  			   nav ul ul a{
+  			     padding-left: 40px;
+  			   }
+  			   nav ul ul ul a{
+  			     padding-left: 80px;
+  			   }
+  			   nav ul ul ul li{
+  			     position: static;
+  			   }
+  			   [id^=btn]:checked + ul{
+  			     display: block;
+  			   }
+  			   nav ul ul li{
+  			     border-bottom: 0px;
+  			   }
+  			   span.cancel:before{
+  			     content: '\f00d';
+  			   }
+  			 }
+
+
+/*Setting up the columns and the general padding around them*/
+
+	.igem_content_wrapper {
+		background-color: #ffffff;
+    	display: block;
+    	width: 100%;
+	}
+
+	.igem_column_wrapper{
+		margin: auto;
+		width: 90%;
+		max-width: 1200px;
+	}
+
+
+
+	/*general styling*/
+/**************************************************************************************************************************************************************************************************/
+
+	/*size for title h tags*/
+	.igem_content_wrapper .igem_column_wrapper h1 { font-size: 800%;}
+	.igem_content_wrapper .igem_column_wrapper h2 { font-size: 400%;}
+	.igem_content_wrapper .igem_column_wrapper h3 { font-size: 300%;}
+	.igem_content_wrapper .igem_column_wrapper h4 { font-size: 250%;}
+	.igem_content_wrapper .igem_column_wrapper h5 { font-size: 200%;}
+	.igem_content_wrapper .igem_column_wrapper h6 { font-size: 130%;}
+
+
+	/*titles h1, h2*/
+	.igem_content_wrapper .igem_column_wrapper h1, .igem_content_wrapper .igem_column_wrapper h2 {
+		border-bottom: 0px;
+		border-top: 0px;
+		color: #1446A0;
+		font-family: 'Heebo', sans-serif;
+        font-weight: 500;
+        letter-spacing: 5px;        
+		line-height: normal;
+		padding: 10px 0px;
+	}
+
+    
+
+	/*titles h3, h3, h5, h6 */
+	.igem_content_wrapper .igem_column_wrapper h3,
+	.igem_content_wrapper .igem_column_wrapper h4,
+	.igem_content_wrapper .igem_column_wrapper h5,
+	.igem_content_wrapper .igem_column_wrapper h6 {
+		border-bottom:0px;
+		color: #4895EF;
+		font-family: 'Heebo', sans-serif;
+		line-height: normal;
+		padding: 5px 0px;
+	}
+
+	/* text p tag*/
+	.igem_content_wrapper .igem_column_wrapper p {
+		font-size: 130%;
+		font-family: 'Open Sans', sans-serif;
+		padding: 5px 0px;
+		text-align: left;
+		color: #484848;
+	}
+
+	/* Links a tag*/
+	.igem_content_wrapper .igem_column_wrapper a {
+		color: #00a19b;
+		font-weight: bold;
+		text-decoration: underline;
+		text-decoration-color:#00a19b;
+		transition: all 0.4s ease;
+		-webkit-transition: all 0.4s ease;
+		-moz-transition: all 0.4s ease;
+		-ms-transition: all 0.4s ease;
+		-o-transition: all 0.4s ease;
+	}
+
+	/* hover for the links */
+	.igem_content_wrapper .igem_column_wrapper a:hover {
+		color: #085156;
+		text-decoration:none;
+	}
+
+
+	/* Table tag*/
+	.igem_content_wrapper .igem_column_wrapper table {
+		border: 1px solid #635d5d;
+		border-collapse: collapse;
+		font-size: 130%;
+		width: 100%;
+	}
+
+	/* table cells */
+	.igem_content_wrapper .igem_column_wrapper td {
+		border: 1px solid #cecece;
+		border-collapse: collapse;
+		font-size: 105%;
+		padding: 10px;
+		vertical-align: text-top;
+	}
+
+	/* table headers */
+	.igem_content_wrapper .igem_column_wrapper th {
+		background-color:#cecece;
+		border: 1px solid #635d5d;
+		border-collapse: collapse;
+		font-size: 110%;
+		padding: 10px;
+		vertical-align: text-top;
+	}
+
+
+
+	/* non numbered lists */
+	.igem_content_wrapper .igem_column_wrapper ul, .igem_content_wrapper .igem_column_wrapper ol {
+		font-size: 130%;
+		font-family: Arial, Helvetica, sans-serif;
+		padding:0px 20px;
+	}
+
+
+	/*font sizing within list nesting*/
+	.igem_content_wrapper .igem_column_wrapper ul ul li, .igem_content_wrapper .igem_column_wrapper ul ul ul li,
+	.igem_content_wrapper .igem_column_wrapper ul ol li, .igem_content_wrapper .igem_column_wrapper ul ul ol li,
+	.igem_content_wrapper .igem_column_wrapper ol ol li, .igem_content_wrapper .igem_column_wrapper ul ol ul li,
+	.igem_content_wrapper .igem_column_wrapper ol ul li, .igem_content_wrapper .igem_column_wrapper ul ol ol li,
+	.igem_content_wrapper .igem_column_wrapper ol ul ul li, .igem_content_wrapper .igem_column_wrapper ol ol ul li,
+ 	.igem_content_wrapper .igem_column_wrapper ol ol ol li, .igem_content_wrapper .igem_column_wrapper ol ul ol li{ font-size: 76%; }
+
+
+
+/*layout classes*/
+/**************************************************************************************************************************************************************************************************/
+
+	/*main layout class */
+	.igem_content_wrapper .igem_column_wrapper .column  {
+		float:left;
+		margin: 1% 2%;
+		padding: 0px;
+	}
+
+	/* 100% */
+	.igem_content_wrapper .igem_column_wrapper .column.full_size { width:96%; }
+
+	/* 66% */
+	.igem_content_wrapper .igem_column_wrapper .column.two_thirds_size { width: 62.6%; }
+
+	/* 33% */
+	.igem_content_wrapper .igem_column_wrapper .column.third_size { width: 29.3%; }
+
+
+
+
+	/*all images*/
+	.igem_content_wrapper .igem_column_wrapper .column.full_size img,
+	.igem_content_wrapper .igem_column_wrapper .column.two_thirds_size img,
+	.igem_content_wrapper .igem_column_wrapper .column.third_size img {
+		margin-bottom: 15px;
+		width: 100%;
+	}
+
+
+	/* page break */
+	.igem_content_wrapper .igem_column_wrapper .clear {
+		clear:both;
+	}
+	/*add extra space to page break with clear class*/
+	.igem_content_wrapper .igem_column_wrapper .clear.extra_space {
+		height: 30px;
+	}
+
+	/* horizontal line to divide the page*/
+	.igem_content_wrapper .igem_column_wrapper .line_divider {
+    	border-top: 1px solid #cecece;
+	  	margin: auto;
+   	 	width: 98%;
+	}
+
+
+
+
+/*support classes*/
+/**************************************************************************************************************************************************************************************************/
+
+
+	/*Button  */
+	/************************************************/
+	.igem_content_wrapper .igem_column_wrapper .button_link {
+		font-size: 130%;
+		margin: 30px auto;
+		text-align: center;
+	}
+
+	.igem_content_wrapper .igem_column_wrapper .button_link a  {
+		background-color: #00a19bad !important;
+		color: #000 !important;
+		font-weight: bold;
+		margin: auto;
+		text-decoration: none !important;
+		padding: 10px 15px !important;
+	}
+
+	.igem_content_wrapper .igem_column_wrapper .button_link a:hover {
+		background-color: #ffb819 !important;
+	}
+
+
+
+	/*highlight */
+	/************************************************/
+	.igem_content_wrapper .igem_column_wrapper .highlight {
+		padding: 15px 20px;
+	}
+
+
+	.igem_content_wrapper .igem_column_wrapper .highlight p,
+	.igem_content_wrapper .igem_column_wrapper .highlight h1,
+	.igem_content_wrapper .igem_column_wrapper .highlight h2,
+	.igem_content_wrapper .igem_column_wrapper .highlight h3,
+	.igem_content_wrapper .igem_column_wrapper .highlight h4,
+	.igem_content_wrapper .igem_column_wrapper .highlight h5,
+	.igem_content_wrapper .igem_column_wrapper .highlight h6 {
+		padding: 5px 15px;
+	}
+
+	.igem_content_wrapper .igem_column_wrapper .highlight.decoration_background {
+		background-color: #ececec;
+	}
+
+	.igem_content_wrapper .igem_column_wrapper .highlight.decoration_A_top {
+    	border-top: 4px solid #00a19bad;
+	}
+
+
+	.igem_content_wrapper .igem_column_wrapper .highlight.decoration_A_full {
+    	border: 4px solid #00a19bad;
+	}
+
+	.igem_content_wrapper .igem_column_wrapper .highlight.decoration_B_top {
+    	border-top: 4px solid #ffb819
+	}
+
+
+	.igem_content_wrapper .igem_column_wrapper .highlight.decoration_B_full {
+    	border: 4px solid #ffb819;
+	}
+
+
+	/* 1100px  */
+	/************************************************/
+	@media only screen and (max-width: 1100px) {
+
+		.igem_content_wrapper .igem_column_wrapper .column.full_size, .igem_content_wrapper .igem_column_wrapper .column.two_thirds_size,.igem_content_wrapper .igem_column_wrapper .column.third_size {width:96%; }
+
+	}
+
+
+	/* 800px  */
+	/************************************************/
+	@media only screen and (max-width: 800px) {
+
+		.menu_container{ display:none; width:100%; border-left:none; position:fixed;}
+
+
+		.menu_container .menu_wrapper{width:60%;}
+		.menu_container .menu_wrapper .menu_tabs_wrapper .menu_tab{width: 33.1%;}
+
+
+		.top_bar .bar_wrapping .bar_button.general_menu.active_button{
+		background-image: url(https://2020.igem.org/wiki/images/7/7a/Hamburger_menu_close.svg) !important;}
+
+
+		.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper .menu_tab_title{
+			display: none;
+		}
+
+		.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper .menu_content_line_divider{
+			    margin: 10px 5%;
+		}
+
+		.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper .input_wrapper .menu_content_input{
+			margin-bottom: 0px;
+		}
+
+		.menu_container .menu_wrapper .menu_tabs_wrapper {
+    		height: 41px;
+    		border-left: 1px solid #cec6cc;
+    		border-right: 1px solid #cec6cc;
+		}
+	}
+
+
+	@media only screen and (max-width: 500px) {
+		.menu_container .menu_wrapper{width:100%; }
+		.top_bar .bar_wrapping .bar_button:hover {background-color: inherit !important;
+    	border-bottom: inherit !important;}
+
+	}
+
+
+
+
+/********  TEAM PAGES **********/
+.judges-will-not-evaluate { border: 4px solid #F42534; padding: 2% !important; width: 92%!important;}
+
+/* STEALING */
+#pagecover{
+	background: url(https://2021.igem.org/wiki/images/d/d2/T--KCL_UK--aquarium%282%29.png) no-repeat center fixed;
+	display: table;
+	height: 100vh;
+	position: relative;
+	width: 100%;
+	background-size: cover;
+	text-align: center;
+	z-index:-1000000000000000000000000000;
+}
+
+.landing-text{
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.landing-text h1 {
+	border-bottom: 0px;
+		color: #ffffff;
+		font-family: 'Heebo', sans-serif;
+		font-size: 1200%;
+        font-weight: 800;
+        letter-spacing: 5px;        
+		line-height: normal;
+		padding: 10px 0px;
+
+}
+
+
+/************************************************************************************************************************************************************/
+
+</style>
+
+<!-- JAVASCRIPT  -->
+	<SCRIPT>
+
+		$(document).ready(function() {
+
+		//remove the HQ_page id
+		$("#HQ_page").attr('id','');
+
+		//check for page scrolling
+		function adjust_for_scrolling(){
+
+			$(window).bind('scroll', function() {
+     			if ($(window).scrollTop() > 500) {
+					$(".general_menu").removeClass('active_button');
+					$(".menu_container").hide();
+					$(".top_bar").hide();
+
+     			}
+     			else {
+					$(".top_bar").show();
+				}
+			});
+
+		}
+
+		//adjust for screen resizing
+		function window_resized(){
+
+			//first get screen size
+
+			//small
+  			if ($(window).width() <= 800) {
+
+				//activate scrolling menu
+				adjust_for_scrolling();
+
+  				// if the menu is visible
+  			  	if($(".menu_container").is(":visible")){
+			//$(".igem_content_wrapper").removeClass("full_screen");
+				}
+				//if it isnt
+  			  	else {
+  			  	  	$('.active_button').removeClass('active_button');
+
+  			  	}
+			}
+
+			//big
+  			if ($(window).width() >= 801) {
+
+				//stop scrolling
+				$(window).unbind('scroll');
+
+				$(".top_bar").show();
+
+  				// if the menu is visible
+  			  	if($(".menu_container").is(":visible")){
+  			  	  	$(".general_menu").addClass('active_button');
+				}
+				//if it isnt
+  			  	else {
+					//$(".igem_content_wrapper").addClass("full_screen");
+  			  	}
+			}
+		}
+
+
+
+		function highlight_current_page_menu() {
+
+			var page_url="https://2021.igem.org/";
+			page_url = page_url + wgPageName;
+			$("a[href$='"+ page_url +"']").parent().addClass("current_page");
+			$("a[href$='"+ page_url +"']").parent().addClass("current_hub");
+
+
+			//if the page is in a submenu, open the submenu and make the appropiate changes
+			if( $( ".current_page" ).hasClass( "submenu_item_wrapper" )){
+
+				$(".current_page").parent().toggle();
+				$(".current_page").parent().prev().addClass("current_hub");
+				$(".current_hub > .menu_control").toggleClass("open");
+
+			}
+		}
+
+
+		//navigation functionality
+		function navigation_functionality(){
+
+			$('.accordion').click(function(){
+				$(this).next().toggle();
+				$(this).children('.menu_control').toggleClass('open');
+			});
+
+			//highlight current page
+			highlight_current_page_menu();
+
+		}
+
+		//navigation adjustments for teams
+		function team_navigation_adjustment(){
+
+			var team_name = wgPageName;
+
+			//if this is the topbar template, for now, leave team example 2
+			if(team_name == 'Template:IGEM_TopBar'){
+				team_name = 'Team:Example2';
+			}
+
+			//if this is a subpage, cut until first '/'
+			if(team_name.indexOf('/') > -1){
+				team_name = team_name.substr(0, team_name.indexOf('/'));
+			}
+
+			//if not, replace all Team:Example 2 with this team's name
+			$('#navigation').find('a').each(function() {
+      			$(this).attr("href", function(index, old) {
+            	return old.replace('Team:Example2',team_name);
+      			});
+			});
+		}
+
+
+		//start of code
+
+		//load navigation menu
+		$("#navigation_tab_content").load("https://2021.igem.org/HQ:Team_Navigation #navigation" , function() {
+			team_navigation_adjustment();
+			navigation_functionality();
+		});
+
+
+
+		// check page width when device loads page
+		if ($(window).width() <= 800) {
+			$('.active_button').removeClass('active_button');
+			adjust_for_scrolling();
+		}
+
+
+		//if the user is resizing the window
+		$( window ).resize(function() {
+
+			window_resized();
+
+		});
+
+
+		// if the button is clicked, hide or show divs
+		$(".general_menu").click(function(){
+
+			//if it is visible, hide everything
+			if($(".menu_container").is(":visible")){
+
+				$(".general_menu").removeClass('active_button');
+				$(".menu_container").fadeOut();
+			}
+			else{
+				$(".general_menu").addClass('active_button');
+				$(".menu_container").fadeIn();
+			}
+
+		});
+
+
+		//if a menu tab is clicked
+		$(".menu_tab").click(function(){
+
+			var clicked_id= $(this).attr('id');
+
+			//remove and hide
+			$('.active_tab').removeClass('active_tab');
+			$(".menu_tabs_content").hide();
+
+			//add and show
+			$(this).addClass("active_tab");
+			$("#"+clicked_id+"_content").show();
+
+		});
+
+
+	});
+	</SCRIPT>
+
+
+
+
+	<!--  top bar --------------------------------------------------------------------------------------------------------------->
+
+	<div class="top_bar">
+
+		<div class="bar_wrapping">
+
+			<a href="https://2021.igem.org/">
+				<div class="bar_button main_page">
+				</div>
+			</a>
+
+			<div class="bar_button general_menu"> </div>
+
+		</div>
+
+	</div>
+	
+
+  <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+  <!--HTML -->
+  <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+  <head>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+  <!--MENU -->
+  <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+  <body>
+        <nav>
+          <div class="logo"><a href="https://2020.igem.org/Team:KCL_UK">
+			Renervate Therapeutics
+	  <img src="https://2021.igem.org/wiki/images/b/bc/T--KCL_UK--blank-logo.png" width="50px" height="50px"></div></a>
+
+  		<label for="btn" class="icon">
+            <span class="fa fa-bars"></span>
+          </label>
+          <input type="checkbox" id="btn">
+          <ul>
+      <li style="padding-right:15px !important;"><a href="https://2020.igem.org/Team:KCL_UK" style="padding-right:15px !important;">Home</a></li>
+      <li>
+
+
+              <label for="btn-1" class="show">Team +</label>
+              <a href="#">Team</a>
+              <input type="checkbox" id="btn-1">
+              <ul>
+      <li><a href="https://2020.igem.org/Team:KCL_UK/Team">Team Members</a></li>
+      <li><a href="https://2020.igem.org/Team:KCL_UK/Attributions">Attributions</a></li>
+      <li><a href="https://2020.igem.org/Team:KCL_UK/Sponsors">Sponsors</a></li>
+  		<li><a href="https://2020.igem.org/Team:KCL_UK/Collaborations">Collaborations</a></li>
+  		<li><a href="https://igem.org/2020_Judging_Form?id=3635">Judging Form</a></li>
+      </ul>
+      </li>
+
+      <li>
+              <label for="btn-2" class="show">Project +</label>
+              <a href="#">Project</a>
+              <input type="checkbox" id="btn-2">
+              <ul>
+      <li><a href="https://2020.igem.org/Team:KCL_UK/Contribution">Contribution</a></li>
+      <li><a href="https://2020.igem.org/Team:KCL_UK/Description">Description</a></li>
+      <li>
+                  <label for="btn-3" class="show">Design +</label>
+                  <a href="#">Design <span style="font-size:14px; text-align:right;">+</span></a>
+                  <input type="checkbox" id="btn-3">
+                  <ul>
+  								<li><a href="https://2020.igem.org/Team:KCL_UK/Design">Design Overview</a></li>
+      <li><a href="https://2020.igem.org/Team:KCL_UK/SCI_Pathophysiology">Pathophysiology of SCI</a></li>
+  		<li><a href="https://2020.igem.org/Team:KCL_UK/Scaffold_Design">Scaffold Design</a></li>
+      <li><a href="https://2020.igem.org/Team:KCL_UK/MFP_Applications">Mussel Foot Proteins</a></li>
+      </ul>
+      </li>
+  			<li><a href="https://2020.igem.org/Team:KCL_UK/Engineering">Engineering</a></li>
+      </ul>
+      </li>
+
+  		<li>
+              <label for="btn-4" class="show">Parts +</label>
+              <a href="#">Parts</a>
+              <input type="checkbox" id="btn-4">
+              <ul>
+      <li><a href="https://2020.igem.org/Team:KCL_UK/Parts">Parts Overview</a></li>
+      <li><a href="https://2020.igem.org/Team:KCL_UK/BasicParts">Basic Parts</a></li>
+      <li><a href="https://2020.igem.org/Team:KCL_UK/CompositeParts">Composite Parts</a></li>
+      </ul>
+      </li>
+
+
+  		<li>
+              <label for="btn-5" class="show">Model +</label>
+              <a href="#">Model</a>
+              <input type="checkbox" id="btn-5">
+              <ul>
+  		<li><a href="https://2020.igem.org/Team:KCL_UK/Model">Overview</a></li>
+  		<li><a href="https://2020.igem.org/Team:KCL_UK/Scaffold_Model">Scaffold Modelling</a></li>
+  		<li><a href="https://2020.igem.org/Team:KCL_UK/Degradation_Model">PCL Degradation</a></li>
+      <li><a href="https://2020.igem.org/Team:KCL_UK/Structural_Modelling">Structural Model</a></li>
+      </ul>
+      </li>
+
+
+  		<li>
+  						<label for="btn-6" class="show">Proposed Implementation +</label>
+  						<a href="#">Proposed Implementation</a>
+  						<input type="checkbox" id="btn-6">
+  						<ul>
+  		<li style="width:195px;"><a href="https://2020.igem.org/Team:KCL_UK/Implementation">Proposed Implementation</a></li>
+  		<li style="width:195px;"><a href="https://2020.igem.org/Team:KCL_UK/Entrepreneurship">Entrepreneurship</a></li>
+  		<li style="width:195px;"><a href="https://2020.igem.org/Team:KCL_UK/Excellence">Excellence</a></li>
+  		</ul>
+  		</li>
+
+  		<li>
+  						<label for="btn-7" class="show">Human Practices +</label>
+  						<a href="#">Human Practices</a>
+  						<input type="checkbox" id="btn-7">
+  						<ul>
+  		<li><a href="https://2020.igem.org/Team:KCL_UK/Human_Practices">Human Practices</a></li>
+  		<li><a href="https://2020.igem.org/Team:KCL_UK/Safety">Safety & Security</a></li>
+  		</ul>
+  		</li>
+
+  		<li>
+  						<label for="btn-8" class="show">Education & Inclusivity+</label>
+  						<a href="#">Education & Inclusivity</a>
+  						<input type="checkbox" id="btn-8">
+  						<ul>
+  		<li><a href="https://2020.igem.org/Team:KCL_UK/Inclusion">Inclusivity Research</a></li>
+  		<li><a href="https://2020.igem.org/Team:KCL_UK/Education">Education</a></li>
+  		<li><a href="https://2020.igem.org/Team:KCL_UK/Biologix_Competition">Biologix Competition</a></li>
+  		</ul>
+  		</li>
+
+      </ul>
+      </nav>
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--- Content of the page  --->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+	<div id="pagecover">
+		<div class="landing-text">
+			<h1>Mussel Foot Proteins</h1>
+		</div>
+	</div>
+	
+	<div class="igem_content_wrapper">
+		<div class="igem_column_wrapper">
+			<div class="clear extra_space"></div>
+			<div class="clear extra_space"></div>
+	
+	<div class="column full_size">
+	<h2> Content goes here </h2>
+	<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dictum lectus accumsan erat aliquam aliquam. Vestibulum feugiat mauris sit amet quam pellentesque malesuada. Maecenas quis vestibulum enim. Mauris lacinia ante non auctor porttitor. Nam quam mauris, malesuada id lobortis et, imperdiet a urna. Donec scelerisque consequat neque id sagittis. Duis metus neque, luctus nec urna sed, cursus condimentum quam. Morbi non sapien id leo luctus placerat sit amet sodales sem. Suspendisse sagittis, dolor vitae varius viverra, justo arcu mollis enim, at pellentesque risus orci non elit. Sed tempus metus non ligula sollicitudin auctor. Nullam efficitur nunc sed nunc auctor, a tristique ex blandit. Sed eu risus et diam laoreet eleifend. Mauris venenatis est sit amet mauris ultricies, egestas ultricies quam vehicula. Ut mollis, ligula vitae blandit ultrices, odio nulla volutpat felis, sed aliquam libero ante quis lacus. Integer fermentum lacus at orci fringilla varius.</p>
+	
+	</div>
