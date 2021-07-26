@@ -1,0 +1,287 @@
+<script> 
+const toggleButton = document.getElementsByClassName('toggle')[0]
+const navbarLinks = document.getElementsByClassName('nav_links')[0]
+
+toggleButton.addEventListener('click', () => {
+navbarLinks.classList.toggle('active')
+})
+
+</script> 
+
+<style>
+* {
+    box-sizing: border-box;
+    font-family: 'Heebo', sans-serif;
+}
+
+.navbar {
+    margin: 0;
+    padding:0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #13293D;
+    color: white;
+
+
+}
+
+.nav_logo {
+    font-size: 1.2rem;
+    margin: 0.5rem;
+    letter-spacing: 1px;
+    float: right;
+  
+}
+
+.nav_logo img {
+ float: left;
+ width: 30px;
+ height: 30px;
+ margin-right: 12px;
+ margin-left: 7px;
+ 
+}
+
+.nav_links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    
+}
+
+.nav_links li {
+    list-style: none;
+    padding-left: 1rem;
+    padding-right: 1em;
+
+
+}
+
+/* drop down */
+
+.nav_links ul li {
+    list-style: none;
+    padding-left: 1.2rem; /*these values*/
+    padding-right: 1.2rem; /*must be the same*/
+    position: relative;
+    padding-top: 0.2em;
+
+}
+
+.nav_links ul li ul {
+    list-style: none;
+    display: none;
+    position: absolute;
+    background-color: #13293D;
+    border-radius: 0px 0px 6px 6px;
+
+}
+
+
+.last_child {
+    list-style: none;
+    display: none;
+    position: absolute;
+    background-color: #13293D;
+    border-radius: 0px 0px 6px 6px;
+    right: 0px;
+
+}
+
+.nav_links ul li:hover ul {
+    display: block;
+   
+}
+
+
+.nav_links ul li ul li  {
+    padding: 12px 14px;
+    width: 180px;
+    border-radius: 6px;
+    
+
+}
+
+.nav_links ul li ul li a {
+    padding: 12px 14px;
+
+}
+
+.nav_links ul li ul li a:hover {
+    background-color: #1a3853 ;
+    padding: 12px 14px;
+}
+
+/********************************/
+.nav_links li a {
+    text-decoration: none;
+    color: white;
+    padding: 1rem 1rem 1rem 1rem;
+    display: block;
+    
+}
+
+.nav_links li:hover {
+    background-color: #1a3853 
+}
+
+
+.toggle {
+    position: absolute; 
+    top: 0.75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+
+}
+
+.toggle .bun {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+/* Hamburger menu display features*/
+@media (max-width: 800px) {
+    .toggle {
+        display: flex;
+        margin-top: 0.5rem;
+
+    }
+
+    .nav_links {
+       display: none; 
+       width: 100%;
+    }
+
+    .nav_links ul li ul li {
+        width: 100%;
+        display: inline-block;
+     }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start; 
+    }
+    .nav_links ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .nav_links li {
+        text-align: center;
+    }
+
+    .nav_links.active {
+        display: flex;
+    }
+}
+
+/* animations */
+
+
+</style> 
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="Menu-bar-css-trial.css" type="text/css">
+        <script src="Script for menuj.js" defer></script>
+        <link link href="https://fonts.googleapis.com/css2?family=Heebo:wght@200&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        
+        <nav class="navbar">
+
+            <div class="nav_logo">Renervate Therapeutics
+                <img src="RT-logo-final (new gradient).png">
+            </div>
+            <a href="#" class="toggle">
+                <span class="bun"></span>
+                <span class="bun"></span>
+                <span class="bun"></span>
+            </a>
+            <div class="nav_links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Team</a>    
+                        <ul class="">
+                            <li><a href="#">Attributions</a></li>
+                            <li><a href="#">Collaborations</a></li>
+                            <li><a href="#">Sponsors</a></li>
+                            <li><a href="#">Team Members</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Project</a>
+                        <ul class="dropdown">
+                            <li><a href="https://2021.igem.org/Team:KCL_UK/Contribution">Contribution</a></li>
+                            <li><a href="https://2021.igem.org/Team:KCL_UK/Description">Description</a></li>
+                            <li><a href="https://2021.igem.org/Team:KCL_UK/Engineering">Engineering</a></li>
+                            <li><a href="--new link required--">Judging Form</a></li>
+                            <li><a href="https://2021.igem.org/Team:KCL_UK/Implementation">Proposed Implementation</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Model</a>
+
+                    <li><a href="#">Experiments</a>
+                        <ul>
+                            <li><a href="https://2021.igem.org/Team:KCL_UK/Notebook">Notebook</a></li>
+                            <li><a href="https://2021.igem.org/Team:KCL_UK/Parts">Parts</a></li>
+                            <li><a href="https://2021.igem.org/Team:KCL_UK/Proof_Of_Concept">Proof of Concept</a></li>
+                            <li><a href="https://2021.igem.org/Team:KCL_UK/Results">Results</a></li>
+                        </ul>
+                    </li>    
+                    <li><a href="#">Design</a> 
+                        <ul>
+                            <li><a href="https://2021.igem.org/Team:KCL_UK/Design">Design Overview</a></li>
+                            <li><a href="https://2021.igem.org/Team:KCL_UK/Entrepreneurship">Mussel Foot Protein Chemistry</a></li>
+                            <li><a href="https://2021.igem.org/Team:KCL_UK/Excellence">Spinal Cord Injury Pathophysiology</a></li>
+                            <li><a href="https://2021.igem.org/Team:KCL_UK/Design">3D Bio-printing</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#">Human Practices</a>
+                        <ul>
+                            <li><a href="https://2021.igem.org/Team:KCL_UK/Human_Practices">Human Practices</a></li>
+                            <li><a href="https://2021.igem.org/Team:KCL_UK/Safety">Safety</a></li>
+                        </ul>
+                    </il>
+    
+                    <li><a href="#">Awards</a>
+                        <ul class="last_child">
+                            <li><a href="https://2021.igem.org/Team:KCL_UK/Inclusivity">Inclusivity Research</a></li>
+  		                    <li><a href="https://2021.igem.org/Team:KCL_UK/Education">Education</a></li>
+  		                    <li><a href="https://2021.igem.org/Team:KCL_UK/Biologix">Biologix Launch!</a></li>
+                        </ul>
+                    </li>
+                    
+
+
+
+
+        
+                </ul>
+            
+        </nav>
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>
