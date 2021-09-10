@@ -1,1 +1,16 @@
+<div class="main_smooth_scrool" id="pagecover_smooth_scrool">
+<div class="text_Team_member">
+<h1>Team</h1>
+  <a href="#section2_smooth_scrool"> <div class="button_smooth_scrool"></div></a>
+</div>
+</div>
+
+
+
+
+<div class="main_2_smooth_scrool" id="section2_smooth_scrool">
+
+  <a href="#pagecover_smooth_scrool"></a>
+</div>
+</div>
 
