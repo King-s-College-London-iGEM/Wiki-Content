@@ -1,0 +1,12 @@
+
+  <div class="mySlides"> <div class= "image_1_sls" ></div> </div>
+  <div class="mySlides"> <div class= "image_2_sls" ></div> </div>
+  <div class="mySlides" > <div class= "image_3_sls" ></div> </div>
+  <div class="mySlides" > <div class= "image_4_sls" ></div> </div>
+
+  <!-- add more if needed-->
+
+  <div class="but_sls"  onclick="plusDivs(-1)" >
+       </div>
+  <div class="but_sls2" onclick="plusDivs(1)">
+  </div>
