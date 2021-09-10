@@ -1,1 +1,20 @@
+  <!--Accordion html-->
+  <html>
+    <body>
+    <button class="accordion1">SCI</button>
+      <div class="panel">
+        <p>Best subgroup</p>
+      </div>
 
+      <button class="accordion2">Bioprinting</button>
+      <div class="panel">
+        <p>Trust issue gang</p>
+      </div>
+
+      <button class="accordion3">MFP</button>
+      <div class="panel">
+        <p>No comment</p>
+      </div>
+     </body>
+   </html>
+  <!--Accordion html-->
